@@ -17,13 +17,17 @@ book = {}
 def book_entry():
     name = input('Enter a name ')
     address = input('Enter an Address ')
-    # book = {name: address}
-    book[name] = address
+    if name in book:
+        print(f'{name} already exists')
+    else:
+        # book = {name: address}
+        book[name] = address
 
 
 is_running = True
 
 while is_running:
+    print(book)
     prompt = input('type add to add an entry. type quit to quit ')
     if prompt == 'add':
         book_entry()
