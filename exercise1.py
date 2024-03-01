@@ -12,28 +12,28 @@
 # Provide a user-friendly and informative message when the program terminates,
 # summarizing the data entered and thanking the user for using the address book.
 
-book = {}
+book = {}  # creates an empty dictionary to the addresses and names to be added to
 
 def book_entry():
-    name = input('Enter a name ')
-    address = input('Enter an Address ')
-    if name in book:
-        print(f'{name} already exists')
-    else:
+    name = input('Enter a name ')  # prompts the user to enter a name
+    address = input('Enter an Address ')  # prompts the user to enter an address
+    if name in book:  # if the name already exists in the dictionary
+        print(f'{name} already exists')  # prints a line that says that the name is already inside the dictionary
+    else:  # if the name does not exist
         # book = {name: address}
-        book[name] = address
+        book[name] = address  # if the name does not already exist in the dictionary it adds it
 
 
-is_running = True
+is_running = True  # boolean statement that keeps the code below running until they type quit
 
-while is_running:
-    print(book)
-    prompt = input('type add to add an entry. type quit to quit ')
-    if prompt == 'add':
-        book_entry()
-    elif prompt == 'quit':
-        is_running = False
+while is_running:  # loop that continues to run until they type quit
+    print(book)  # prints the empty dictionary from above
+    prompt = input('type add to add an entry. type quit to quit ')  # prompts the user
+    if prompt == 'add':  # if they say add
+        book_entry()  # calls the function from above
+    elif prompt == 'quit':  # if they say quit in the prompt
+        is_running = False  # shuts down the loop
     else:
         print('invalid input')
 
-print(book)
+print(book)  # shows all available times that works for the whole team
